@@ -12,10 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from yacfg_batch.yacfg_batch import (
-    prioritize_generate_data,
-    GenerateData
-)
+from yacfg_batch.yacfg_batch import GenerateData, prioritize_generate_data
 
 
 def test_default(*_):

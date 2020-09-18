@@ -19,9 +19,9 @@ import shutil
 import yaml
 
 from .exceptions import ProfileError
-from .files import select_profile_file, ensure_output_path, select_template_dir
+from .files import ensure_output_path, select_profile_file, select_template_dir
 from .meta import NAME
-from .profiles import load_profile_defaults, get_tuned_profile
+from .profiles import get_tuned_profile, load_profile_defaults
 
 LOG = logging.getLogger(__name__)
 

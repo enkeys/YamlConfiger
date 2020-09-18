@@ -18,18 +18,15 @@ import logging
 import os
 import sys
 
-from .config_data import RenderOptions
-from .yacfg import generate
-from .cli_arguments import parser, boolize, parse_key_value_list
-from .exceptions import TemplateError, ProfileError, GenerationError
-from .meta import VERSION, NAME
-from .output import (
-    new_profile, new_profile_rendered,
-    new_template, export_tuning_variables
-)
-from .query import list_templates, list_profiles
-
 from . import logger_settings
+from .cli_arguments import boolize, parse_key_value_list, parser
+from .config_data import RenderOptions
+from .exceptions import GenerationError, ProfileError, TemplateError
+from .meta import NAME, VERSION
+from .output import (export_tuning_variables, new_profile,
+                     new_profile_rendered, new_template)
+from .query import list_profiles, list_templates
+from .yacfg import generate
 
 logger_settings.config_console_logger()
 

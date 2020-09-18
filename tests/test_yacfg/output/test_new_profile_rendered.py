@@ -18,12 +18,11 @@ import mock as mock
 import pytest
 
 import yacfg.output
-from yacfg.output import new_profile_rendered
 from yacfg.meta import NAME
-from ..profiles.fakes import (
-    fake_load_tuned_profile_with_defaults,
-    fake_load_tuned_profile_no_defaults,
-)
+from yacfg.output import new_profile_rendered
+
+from ..profiles.fakes import (fake_load_tuned_profile_no_defaults,
+                              fake_load_tuned_profile_with_defaults)
 
 
 @mock.patch('yacfg.output.get_tuned_profile',

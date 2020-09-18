@@ -13,17 +13,15 @@
 # limitations under the License.
 
 import os
-import mock
 import shutil
 
+import mock
 import pytest
 
-from yacfg.output import new_profile
 import yacfg.output
-from ..files.fakes import (
-    fake_select_profile_file,
-    fake_profile_path
-)
+from yacfg.output import new_profile
+
+from ..files.fakes import fake_profile_path, fake_select_profile_file
 
 
 @mock.patch('yacfg.output.select_profile_file',

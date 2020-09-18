@@ -20,6 +20,7 @@ import yaml
 import yacfg.profiles
 from yacfg.exceptions import ProfileError
 from yacfg.profiles import get_tuned_profile
+
 from .fakes import fake_load_tuned_profile_no_defaults
 
 

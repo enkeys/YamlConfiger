@@ -17,7 +17,8 @@ import os
 import mock
 
 from yacfg.query import list_profiles
-from ..files.fakes import fake_profile_path, fake_module_path
+
+from ..files.fakes import fake_module_path, fake_profile_path
 
 
 def fake_os_walk_profiles_basic(*_):

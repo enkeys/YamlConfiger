@@ -16,14 +16,10 @@ import mock
 
 import yacfg_batch
 from yacfg_batch.yacfg_batch import generate
-from .fakes import (
-    fake_iter_gen_profiles_one,
-    fake_iter_gen_profiles_two,
-    fake_common_one,
-    fake_default_one,
-    fake_common_two,
-    fake_default_two,
-)
+
+from .fakes import (fake_common_one, fake_common_two, fake_default_one,
+                    fake_default_two, fake_iter_gen_profiles_one,
+                    fake_iter_gen_profiles_two)
 
 
 @mock.patch('yacfg_batch.yacfg_batch.generate_all_profiles', mock.Mock())

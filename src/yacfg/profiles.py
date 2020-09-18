@@ -19,7 +19,7 @@ import yaml
 from jinja2 import Environment, FileSystemLoader
 
 from .exceptions import ProfileError, TemplateError
-from .files import select_profile_file, get_profiles_path
+from .files import get_profiles_path, select_profile_file
 
 LOG = logging.getLogger(__name__)
 

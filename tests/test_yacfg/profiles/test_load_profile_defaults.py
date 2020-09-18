@@ -18,10 +18,8 @@ import pytest
 import yacfg.profiles
 from yacfg.exceptions import TemplateError
 from yacfg.profiles import load_profile_defaults
-from .fakes import (
-    fake_load_profile_defaults,
-    fake_get_tuned_profile,
-)
+
+from .fakes import fake_get_tuned_profile, fake_load_profile_defaults
 
 
 @mock.patch('yacfg.profiles.get_profile_template', mock.Mock())

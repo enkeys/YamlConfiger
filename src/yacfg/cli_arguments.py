@@ -15,7 +15,7 @@
 import argparse
 import re
 
-from .meta import NAME, VERSION, DESCRIPTION
+from .meta import DESCRIPTION, NAME, VERSION
 
 parser = argparse.ArgumentParser(
     prog='{} {}'.format(NAME, VERSION),

@@ -21,6 +21,7 @@ import os
 import yaml
 
 import yacfg.yacfg
+
 from .exceptions import YacfgBatchException
 
 LOG = logging.getLogger(__name__)

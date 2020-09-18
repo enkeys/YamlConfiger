@@ -18,7 +18,7 @@ import posixpath
 import re
 
 from .files import get_module_path
-from .meta import TEMPLATES, PROFILES
+from .meta import PROFILES, TEMPLATES
 
 LOG = logging.getLogger(__name__)
 

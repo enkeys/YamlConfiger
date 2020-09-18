@@ -18,7 +18,8 @@ import pytest
 import yacfg.profiles
 from yacfg.exceptions import TemplateError
 from yacfg.profiles import get_profile_template
-from ..files.fakes import fake_select_profile_file, fake_profile_path
+
+from ..files.fakes import fake_profile_path, fake_select_profile_file
 
 
 @mock.patch('yacfg.profiles.select_profile_file',

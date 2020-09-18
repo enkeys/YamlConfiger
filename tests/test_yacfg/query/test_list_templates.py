@@ -17,6 +17,7 @@ import os
 import mock
 
 from yacfg.query import list_templates
+
 from ..files.fakes import fake_module_path, fake_templates_path
 
 

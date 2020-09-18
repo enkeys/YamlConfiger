@@ -19,8 +19,8 @@ import pytest
 import yacfg.exceptions
 import yacfg.templates
 from yacfg.templates import get_template_environment
-from ..files.fakes import fake_select_template_dir
-from ..files.fakes import fake_templates_path
+
+from ..files.fakes import fake_select_template_dir, fake_templates_path
 
 
 @mock.patch('yacfg.templates.get_templates_path',

@@ -20,7 +20,8 @@ import pytest
 
 import yacfg.output
 from yacfg.output import new_template
-from ..files.fakes import fake_templates_path, fake_select_template_dir
+
+from ..files.fakes import fake_select_template_dir, fake_templates_path
 
 
 @mock.patch('yacfg.output.select_template_dir',

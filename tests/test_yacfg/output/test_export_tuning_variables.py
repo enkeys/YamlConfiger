@@ -21,8 +21,9 @@ import yacfg.output
 from yacfg.exceptions import ProfileError
 from yacfg.meta import NAME
 from yacfg.output import export_tuning_variables
-from ..profiles.fakes import fake_load_profile_defaults, \
-    fake_profile_defaults_yaml
+
+from ..profiles.fakes import (fake_load_profile_defaults,
+                              fake_profile_defaults_yaml)
 
 
 @mock.patch('yacfg.output.load_profile_defaults',

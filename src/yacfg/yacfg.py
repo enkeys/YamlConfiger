@@ -21,8 +21,8 @@ import logging
 import jinja2
 from jinja2 import Environment, Template
 
-from .config_data import add_template_metadata, add_render_config
-from .exceptions import TemplateError, GenerationError
+from .config_data import add_render_config, add_template_metadata
+from .exceptions import GenerationError, TemplateError
 from .files import ensure_output_path, get_output_filename
 from .output import write_output
 from .profiles import get_tuned_profile

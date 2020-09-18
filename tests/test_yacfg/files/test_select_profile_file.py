@@ -20,7 +20,8 @@ import pytest
 import yacfg.files
 import yacfg.meta
 from yacfg.exceptions import ProfileError
-from .fakes import fake_module_path, fake_profile_path, fake_os_abspath
+
+from .fakes import fake_module_path, fake_os_abspath, fake_profile_path
 
 
 @mock.patch('yacfg.files.get_module_path', side_effect=fake_module_path)

@@ -20,6 +20,7 @@ import pytest
 import yacfg.files
 from yacfg import meta
 from yacfg.exceptions import TemplateError
+
 from .fakes import fake_templates_path
 
 
