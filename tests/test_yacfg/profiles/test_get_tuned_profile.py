@@ -15,12 +15,16 @@ import copy
 
 import mock
 import pytest
-import yaml
+# import yaml
+from ruamel.yaml import YAML
+
 
 import yacfg.profiles
 from yacfg.exceptions import ProfileError
 from yacfg.profiles import get_tuned_profile
 from .fakes import fake_load_tuned_profile_no_defaults
+
+yaml = YAML(typ="safe")
 
 
 @mock.patch('yacfg.profiles.load_tuning', mock.Mock())

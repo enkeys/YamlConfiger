@@ -16,7 +16,10 @@ import logging
 import os
 import shutil
 
-import yaml
+# import yaml
+from ruamel.yaml import YAML
+from ruamel.yaml.dumper import SafeDumper
+
 
 from .exceptions import ProfileError
 from .files import select_profile_file, ensure_output_path, select_template_dir
@@ -24,12 +27,13 @@ from .meta import NAME
 from .profiles import load_profile_defaults, get_tuned_profile
 
 LOG = logging.getLogger(__name__)
+yaml = YAML(typ="safe")
 
 
 # pyyaml workaround
 # https://stackoverflow.com/questions/25108581/python-yaml-dump-bad-indentation
 # https://github.com/yaml/pyyaml/issues/234
-class MyDumper(yaml.SafeDumper):
+class MyDumper(SafeDumper):
     def increase_indent(self, flow=False, indentless=False):
         return super(MyDumper, self).increase_indent(flow, False)
 

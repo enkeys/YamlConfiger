@@ -1,6 +1,7 @@
 # yacfg requirements for easy installation of all development and testing dependencies
 
 # Runtime Requirements
+ruamel.yaml
 pyyaml
 jinja2
 

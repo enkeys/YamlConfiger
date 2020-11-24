@@ -15,13 +15,16 @@ import itertools
 import logging
 import os
 
-import yaml
+# import yaml
+from ruamel.yaml import YAML
+from ruamel.yaml.error import YAMLError
 from jinja2 import Environment, FileSystemLoader
 
 from .exceptions import ProfileError, TemplateError
 from .files import select_profile_file, get_profiles_path
 
 LOG = logging.getLogger(__name__)
+yaml = YAML(typ="safe")
 
 
 def load_tuning_files(tuning_files=None):
@@ -40,14 +43,14 @@ def load_tuning_files(tuning_files=None):
     if tuning_files:
         for tuning_file in tuning_files:
             try:
-                tuning_values_list.append(yaml.load(stream=open(tuning_file, 'r'), Loader=yaml.SafeLoader))
+                tuning_values_list.append(yaml.load(stream=open(tuning_file, 'r')))
             except IOError as exc:
                 raise ProfileError(
                     'Unable to open tuning file "{}" {}'.format(
                         tuning_file, exc
                     )
                 )
-            except yaml.YAMLError as exc:
+            except YAMLError as exc:
                 raise ProfileError(
                     'Unable to parse YAML tuning file "{}" {}'.format(
                         tuning_files, exc
@@ -117,8 +120,8 @@ def get_tuned_profile(profile, tuning_files_list=None, tuning_data_list=None):
     tuned_profile = tuning_profile.render(tuning_data)
 
     try:
-        config_data = yaml.load(stream=tuned_profile, Loader=yaml.SafeLoader)
-    except yaml.YAMLError as exc:
+        config_data = yaml.load(stream=tuned_profile)
+    except YAMLError as exc:
         raise ProfileError(
             'Unable to parse tuned profile "{}" {}'.format(
                 profile, exc
@@ -143,7 +146,7 @@ def load_profile_defaults(profile):
     # scratch render of profile template for _defaults extraction
     scratch_profile = get_profile_template(profile)
     scratch_profile = scratch_profile.render()
-    tmp_data = yaml.load(stream=scratch_profile, Loader=yaml.SafeLoader)
+    tmp_data = yaml.load(stream=scratch_profile)
     tuning_data = tmp_data.get('_defaults', {})
     LOG.debug('Tuning data: %s', tuning_data)
     return tuning_data

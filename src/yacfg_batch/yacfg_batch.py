@@ -18,12 +18,16 @@ import copy
 import logging
 import os
 
-import yaml
+# import yaml
+from ruamel.yaml import YAML
+from ruamel.yaml.error import YAMLError
 
 import yacfg.yacfg
 from .exceptions import YacfgBatchException
 
 LOG = logging.getLogger(__name__)
+
+yaml = YAML(typ="safe")
 
 
 class GenerateData(object):
@@ -62,7 +66,7 @@ def iter_gen_profiles(filename):
         raise YacfgBatchException(
             'Unable to open gen profile "{}" {}'.format(filename, exc)
         )
-    except yaml.YAMLError as exc:
+    except YAMLError as exc:
         raise YacfgBatchException(
             'Unable to parse YAML gen profile "{}" {}'.format(filename, exc)
         )

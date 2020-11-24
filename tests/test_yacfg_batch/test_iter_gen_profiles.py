@@ -14,10 +14,15 @@
 
 import mock
 import pytest
-import yaml
+# import yaml
+from ruamel.yaml import YAML
+from ruamel.yaml.error import YAMLError
+
 import yacfg_batch
 from yacfg_batch.yacfg_batch import iter_gen_profiles
 from yacfg_batch.exceptions import YacfgBatchException
+
+yaml = YAML(typ="safe")
 
 
 @mock.patch('yacfg_batch.yacfg_batch.open', mock.Mock())
@@ -58,7 +63,7 @@ def test_io_error(*_):
 
 
 @mock.patch('yacfg_batch.yacfg_batch.open', mock.Mock())
-@mock.patch('yaml.load_all', side_effect=yaml.YAMLError('Cannot parse'))
+@mock.patch('yaml.load_all', side_effect=YAMLError('Cannot parse'))
 def test_yaml_error(*_):
     filename = 'test.yaml'
     file_desc = mock.sentinel.file_desc
