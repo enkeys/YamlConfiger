@@ -2,7 +2,6 @@
 
 # Runtime Requirements
 ruamel.yaml
-pyyaml
 jinja2
 
 # Testing Requirements
